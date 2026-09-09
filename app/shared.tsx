@@ -1,0 +1,2 @@
+import type {ReactNode} from "react";
+export function EditorFrame({tab,count,children}:{tab:string;count:number;children:ReactNode}){const lines=Array.from({length:count},(_,i)=>String(i+1).padStart(2,"0"));return <main className="shell"><section className="editor"><header className="titlebar"><div className="dots"><i/><i/><i/></div><span className="tab">{tab}</span></header><div className="workspace"><aside className="gutter">{lines.map(x=><span key={x}>{x}</span>)}</aside><div className="code">{children}</div></div></section></main>}
